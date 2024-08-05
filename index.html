@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM VALIDATION WITH API</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <h2>Login</h2>
+            <input type="text" class="form-control mt-4" id="uname" placeholder="NAME">
+            <button class="form-control btn btn-primary form-control m-2" onclick="login()">Login</button>
+        </div>
+        <div class="col-4"></div>
+    </div> 
+
+    <script>
+        function login() {
+            var user = document.getElementById("uname").value;
+            if (user === "") {
+                alert("Please enter your name");
+            } else {
+                localStorage.setItem('username', user);
+                window.location.href = "login.html";
+            }
+        }
+    </script>
+</body>
+</html>
