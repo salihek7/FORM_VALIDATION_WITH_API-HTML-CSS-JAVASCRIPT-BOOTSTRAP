@@ -59,6 +59,7 @@ function search() {
               <p class="card-text">Name: ${data.name}</p>
               <p class="card-text">Username: ${data.username}</p>
               <p class="card-text">Email: ${data.email}</p>
+              <p class="card-text">Website: ${data.website}</p>
             </div>
           </div>
         `;

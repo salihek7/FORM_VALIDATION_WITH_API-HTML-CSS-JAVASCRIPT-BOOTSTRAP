@@ -16,7 +16,10 @@
         <div class="col-4">
             <h2>Login</h2>
             <input type="text" class="form-control mt-4" id="uname" placeholder="NAME">
-            <button class="form-control btn btn-primary form-control m-2" onclick="login()">Login</button>
+            <input type="text" class="form-control mt-4" id="age" placeholder="AGE">
+            <input type="text" class="form-control mt-4" id="address" placeholder="ADDRESS">
+            <input type="email" class="form-control mt-4" id="email" placeholder="EMAIL">
+            <button class="form-control btn btn-success form-control m-2" onclick="login()">Login</button>
         </div>
         <div class="col-4"></div>
     </div> 
@@ -24,12 +27,34 @@
     <script>
         function login() {
             var user = document.getElementById("uname").value;
+            var age = document.getElementById("age").value;
+            var address = document.getElementById("address").value;
+            var email = document.getElementById("email").value;
+
             if (user === "") {
                 alert("Please enter your name");
-            } else {
+            }
+            else if (age === "") {
+                alert("Please enter your age");
+            }
+            else if (address === "") {
+                alert("Please enter your address");
+            }
+            else if (email === "") {
+                alert("Please enter your email");
+            }
+            else if (!validateEmail(email)) {
+                alert("Please enter a valid email");
+            }
+            else {
                 localStorage.setItem('username', user);
                 window.location.href = "login.html";
             }
+        }
+
+        function validateEmail(email) {
+            var re = /\S+@\S+\.\S+/;
+            return re.test(email);
         }
     </script>
 </body>
